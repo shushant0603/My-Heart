@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+    background-color: black;
+}
 .heart{
   position: absolute;
    top: 45%;
@@ -11,6 +14,7 @@
    transform: rotate(45deg);
    transform-origin: center;
    background-color: #ff0000; 
+  animation: heartbeat  1s  infinite ;
 }
 .heart::before,.heart:after{
   content: 'I LOVE YOU';
@@ -27,12 +31,30 @@
   text-align: center;
   transform: rotate(-44deg);
   z-index: 1;
+  /* box-shadow: -10px 10px 90px #f20044; */
   
 
 }
 .heart::before{
   left:-100px;
+  top: 0;
 }
 .heart::after{
   top: -100px;
+  right: 0;
+}
+@keyframes heartbeat{
+  0%{
+    transform: scale(1);
+    /* transform: rotate(45deg); */
+  }
+  50%{
+    transform: scale(1.2);
+    /* transform: rotate(45deg); */
+  }
+  100%{
+    transform: scale(1);
+    /* transform: rotate(45deg); */
+  }
+  
 }
